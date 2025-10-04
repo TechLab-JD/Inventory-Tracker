@@ -3,6 +3,7 @@ import os
 
 from util.core import clear_screen
 from util.build_inventory_table import display_inventory_table
+from util.table_manager import add_inventory_item
 
 def Startup():
     # Display the main menu options
@@ -19,16 +20,20 @@ def Startup():
     if choice not in ['1', '2', '3', '4', '5']:
         print("Invalid choice. Please select a valid option.")
         clear_screen()
-        return main_menu()
+        return Startup()
     else:
         if choice == '1':
             clear_screen()
             display_inventory_table()
             input("\nPress Enter to return to the main menu...")
             clear_screen()
-            main_menu()
+            Startup()
         elif choice == '2':
-            print("Add Item functionality not implemented yet.")
+            clear_screen()
+            add_inventory_item()
+            input("\nItem added. Press Enter to return to the main menu...")
+            clear_screen()
+            Startup()
         elif choice == '3':
             print("Remove Item functionality not implemented yet.")
         elif choice == '4':
