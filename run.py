@@ -3,7 +3,7 @@ import os
 
 from util.core import clear_screen
 from util.build_inventory_table import display_inventory_table
-from util.table_manager import add_inventory_item
+from util.table_manager import add_inventory_item, update_inventory_item
 
 def Startup():
     # Display the main menu options
@@ -37,7 +37,10 @@ def Startup():
         elif choice == '3':
             print("Remove Item functionality not implemented yet.")
         elif choice == '4':
-            print("Update Item functionality not implemented yet.")
+            clear_screen()
+            update_inventory_item()
+            input("\nItem updated. Press Enter to return to the main menu...")
+            Startup()
         elif choice == '5':
             print("Exiting the program.")
             exit()

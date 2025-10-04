@@ -2,22 +2,22 @@
     "items": [
         {
             "name": "Book",
-            "cost_price": 10.39,
-            "selling_price": 15.99,
-            "quantity": 40,
+            "cost_price": 9.99,
+            "selling_price": 16.99,
+            "quantity": 140,
             "category": "Education"
         },
         {
             "name": "Table",
-            "cost_price": 70.49,
+            "cost_price": 69.99,
             "selling_price": 99.99,
-            "quantity": 15,
+            "quantity": 35,
             "category": "Furniture"
         },
         {
             "name": "Chair",
-            "cost_price": 30.89,
-            "selling_price": 44.99,
+            "cost_price": 28.75,
+            "selling_price": 49.99,
             "quantity": 25,
             "category": "Furniture"
         },
@@ -30,9 +30,9 @@
         },
         {
             "name": "Pens",
-            "cost_price": 5.99,
-            "selling_price": 8.99,
-            "quantity": 250,
+            "cost_price": 4.99,
+            "selling_price": 9.99,
+            "quantity": 225,
             "category": "Office Supplies"
         }
     ]
