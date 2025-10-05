@@ -1,8 +1,8 @@
 
 from util.build_inventory_table import display_inventory_table
-from util.table_manager import add_inventory_item, update_inventory_item, remove_inventory_item
+from util.table_manager import add_inventory_item, update_inventory_item, remove_inventory_item, export_inventory
 from util.core import clear_screen
-from util.data_analyze import analyze_inventory
+from util.data_analyze import analyze_inventory, search_inventory
 
 def MainMenu():
     # Display the main menu options
@@ -15,10 +15,13 @@ def MainMenu():
     print("3. Remove Item")
     print("4. Update Item")
     print("5. Analyze Inventory")
-    print("6. Exit")
+    print("6. Export Inventory")
+    print("7. Search Inventory")
+    print("8. Exit")
     choice = input("Select an option (1-5): ")
-    if choice not in ['1', '2', '3', '4', '5']:
+    if choice not in ['1', '2', '3', '4', '5', '6', '7', '8']:
         print("Invalid choice. Please select a valid option.")
+        input("Press Enter to continue...")
         clear_screen()
         return MainMenu()
     else:
@@ -51,6 +54,19 @@ def MainMenu():
             clear_screen()
             MainMenu()
         elif choice == '6':
+            clear_screen()
+            print("Exporting inventory...")
+            export_inventory()
+            input("\nInventory exported. Press Enter to return to the main menu...")
+            clear_screen()
+            MainMenu()
+        elif choice == '7':
+            clear_screen()
+            search_inventory()
+            input("\nPress Enter to return to the main menu...")
+            clear_screen()
+            MainMenu()
+        elif choice == '8':
             print("Exiting the program.")
             exit()
     return 

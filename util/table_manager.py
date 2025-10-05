@@ -1,5 +1,6 @@
 import json
 import time
+import csv
 
 from util.core import clear_screen
 
@@ -214,3 +215,20 @@ def update_inventory_item():
                 return update_flow()
         update_flow()
 
+def export_inventory():
+    # Export the inventory data to a CSV file
+    try:
+        
+        with open('data/inventory.json', 'r') as json_file:
+            data = json.load(json_file)
+        with open('data/inventory_export.csv', 'w', newline='') as csv_file:
+            fieldnames = ['name', 'cost_price', 'selling_price', 'quantity', 'category']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            for item in data['items']:
+                writer.writerow(item)
+        print("Inventory exported to 'data/inventory_export.csv'.")
+        input("Press Enter to return to the main menu...")
+    except Exception as e:
+        print(f"An error occurred while exporting: {e}")
+        input("Press Enter to return to the main menu...")

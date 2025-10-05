@@ -1,4 +1,5 @@
 from util.core import clear_screen
+from util.table_manager import list_of_items
 
 import json
 
@@ -36,3 +37,33 @@ Avg profit margin:  {average_profit_margin:.2f}%
 {total_items} Unique items: 
 {', '.join(name_list)}
 --------------------------------""") 
+
+def search_inventory():
+    # Search for an item in the inventory and display its details
+    item_name = input("Enter the item name to search (or 'All' to list all items):  \n>> ")
+    with open('data/inventory.json', 'r') as file:
+        data = json.load(file)
+        items = data['items']
+        item = next((item for item in items if item['name'].lower() == item_name.lower()), None)
+        if item:
+            print(f"""
+--------------------------------
+\tItem Details>> '{item_name}'
+--------------------------------
+Cost Price: ${item['cost_price']:.2f}
+Selling Price: ${item['selling_price']:.2f}
+Quantity: {item['quantity']}
+Category: {item['category']}
+--------------------------------""")
+        elif item_name == '':
+            print("Item name cannot be empty.")
+            input("Press Enter to try again...")
+            clear_screen()
+            return search_inventory()
+        elif item_name.lower() == "all":
+            alphabetical_items = sorted(list_of_items(), key=lambda x: x.lower())
+            for i in alphabetical_items:
+                print(f"- {i}")
+            return search_inventory()
+        else:
+            print(f"Item '{item_name}' not found in inventory.")
