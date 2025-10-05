@@ -2,7 +2,7 @@
     "items": [
         {
             "name": "Book",
-            "cost_price": 9.99,
+            "cost_price": 8.99,
             "selling_price": 16.99,
             "quantity": 140,
             "category": "Education"
@@ -34,6 +34,20 @@
             "selling_price": 9.99,
             "quantity": 225,
             "category": "Office Supplies"
+        },
+        {
+            "name": "Bookshelf",
+            "cost_price": 32.99,
+            "selling_price": 55.99,
+            "quantity": 25,
+            "category": "Furniture"
+        },
+        {
+            "name": "Nightstand",
+            "cost_price": 20.99,
+            "selling_price": 45.99,
+            "quantity": 75,
+            "category": "Furniture"
         }
     ]
 }

@@ -1,5 +1,6 @@
-from util.core import clear_screen
 import util.json_manager as jm
+from util.core import clear_screen
+
 import pandas as pd
 
 from rich.table import Table
