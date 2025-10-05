@@ -1,6 +1,6 @@
 
 from util.build_inventory_table import display_inventory_table
-from util.table_manager import add_inventory_item, update_inventory_item
+from util.table_manager import add_inventory_item, update_inventory_item, remove_inventory_item
 from util.core import clear_screen
 
 
@@ -34,7 +34,10 @@ def MainMenu():
             clear_screen()
             MainMenu()
         elif choice == '3':
-            print("Remove Item functionality not implemented yet.")
+            clear_screen()
+            remove_inventory_item()
+            input("\nItem removed. Press Enter to return to the main menu...")
+            MainMenu()
         elif choice == '4':
             clear_screen()
             update_inventory_item()

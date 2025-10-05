@@ -24,6 +24,27 @@ def list_of_items():
         data = json.load(file)
         return [item['name'] for item in data['items']]
 
+def remove_inventory_item():
+    # Remove an item from the inventory table
+    with open('data/inventory.json', 'r+') as file:
+        data = json.load(file)
+        print("Current items in inventory:")
+        for i in list_of_items():
+            print(f"- {i}")
+        item_name = input("Enter item name to remove: ")
+        item_exists = any(item['name'] == item_name for item in data['items'])
+        if not item_exists:
+            print(f"Item '{item_name}' not found in inventory.")
+            return
+        data['items'] = [item for item in data['items'] if item['name'] != item_name]
+        file.seek(0)
+        json.dump(data, file, indent=4)
+        file.truncate()
+    print(f"Item '{item_name}' has been removed from the inventory.")
+    for i in list_of_items():
+        print(f"- {i}")
+
+
 def item_details(item_name):
     # Return the details of a specific item
     with open('data/inventory.json', 'r') as file:
@@ -192,3 +213,4 @@ def update_inventory_item():
                 input("Press Enter to try again...")
                 return update_flow()
         update_flow()
+

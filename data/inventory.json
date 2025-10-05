@@ -1,13 +1,6 @@
 {
     "items": [
         {
-            "name": "Book",
-            "cost_price": 8.99,
-            "selling_price": 16.99,
-            "quantity": 140,
-            "category": "Education"
-        },
-        {
             "name": "Table",
             "cost_price": 69.99,
             "selling_price": 99.99,
@@ -27,13 +20,6 @@
             "selling_price": 1299.99,
             "quantity": 5,
             "category": "Electronics"
-        },
-        {
-            "name": "Pens",
-            "cost_price": 4.99,
-            "selling_price": 9.99,
-            "quantity": 225,
-            "category": "Office Supplies"
         },
         {
             "name": "Bookshelf",
