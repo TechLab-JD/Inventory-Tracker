@@ -23,7 +23,7 @@ def create_rich_table():
 def display_inventory_table():
     rich_table = create_rich_table()
     console = Console()
-    return console.print(rich_table)
+    console.print(rich_table)
 
 def build_inventory_table():
     # Build and return a DataFrame representation of the inventory
